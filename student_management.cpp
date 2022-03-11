@@ -1,10 +1,10 @@
-#include <iostream.h>
-#include <stdio.h>
-#include <conio.h>
-#include <fstream.h>
-#include <stdlib.h>
-#include <io.h>
-#include <iomanip.h>
+#include <iostream>
+#include <cstdio>
+#include <fstream>
+#include <cstdlib>
+#include <iomanip>
+
+using namespace std;
 
 class student
 { // io.h: used for "rename" and "remove" keywords
@@ -67,7 +67,7 @@ public:
 //***************************************************************************
 void write()
 {
-    clrscr(); // ios::binary used for ios::in ie reading of file
+    system("cls"); // ios::binary used for ios::in ie reading of file
     char ans;
     student s1; // ios::app (append) used for ios::out ie writing of file
     ofstream a;
@@ -83,14 +83,14 @@ void write()
         cin >> ans;
     } while (ans == 'Y' || ans == 'y');
     a.close();
-    getch();
+    return;
 }
 //***************************************************************************
 // SYNTAX FOR READING A FILE IN FILE HANDLING
 //***************************************************************************
 void read()
 {
-    clrscr();
+    system("cls");
     student s1;
     ifstream a;
     a.open("student1.dat", ios::binary);
@@ -101,12 +101,12 @@ void read()
         s1.display();
     }
     a.close();
-    getch();
+    return;
 }
 //****************************************************************************
 void show_tab()
 {
-    clrscr();
+    system("cls");
     student s1;
     ifstream a;
     a.open("student1.dat", ios::binary);
@@ -128,13 +128,13 @@ void show_tab()
         s1.showtab();
     }
     a.close();
-    getch();
+    return;
 }
 //***************************************************************************
 void read1()
 {
     int rollnew;
-    clrscr();
+    system("cls");
     student s1;
     ifstream a;
     a.open("student1.dat", ios::binary);
@@ -151,14 +151,14 @@ void read1()
         }
     }
     a.close();
-    getch();
+    return;
 }
 //***************************************************************************
 // SYNTAX FOR MODIFYING A FILE IN FILE HANDLING
 //***************************************************************************
 void modify()
 {
-    clrscr();
+    system("cls");
     int rollnew, i;
     student s;
     cout << "\nenter roll number to modify record: ";
@@ -197,7 +197,7 @@ void modify()
 //***************************************************************************
 void delete_()
 {
-    clrscr();
+    system("cls");
     int rollnew, i;
     student s;
     cout << "\nenter roll number to delete record: ";
@@ -234,7 +234,7 @@ void delete_()
 void result_menu()
 {
     int ch;
-    clrscr();
+    system("cls");
     cout << "\n\t\t\t\tDISPLAY RESULT MENU\n";
     cout << "\t\t\t\t*******************\n\n";
     cout << "\t\t\t1." << '\t' << "Show All Student Records" << endl;
@@ -269,7 +269,7 @@ void result_menu()
 void edit_menu()
 {
     int ch;
-    clrscr();
+    system("cls");
     cout << "\n\t\t\t\tENTRY / EDIT MENU\n";
     cout << "\t\t\t\t*****************\n\n";
     cout << "\t\t\t1." << '\t' << "Enter Student Record" << endl;
@@ -310,7 +310,7 @@ void edit_menu()
  int ch;
  do
  {
- clrscr();
+ system("cls");
  cout<<"\n\t\t\t\tOPTIONS\n";
  cout<<"\t\t\t\t*******\n\n";
  cout<<"\t\t\t1."<<'\t'<<"Enter Student Record"<<endl;
@@ -343,7 +343,7 @@ int main()
     int ch;
     do
     {
-        clrscr();
+        system("cls");
         cout << "\n\t\t\t\tOPTIONS\n";
         cout << "\t\t\t\t*******\n\n";
         cout << "\t\t\t1." << '\t' << "Entry / Edit Menu" << endl;
