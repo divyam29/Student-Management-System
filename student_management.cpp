@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <iomanip>
+#include <string>
 
 using namespace std;
 
@@ -20,8 +21,8 @@ public:
              << endl;
         cout << "Enter Roll Number: ";
         cin >> rollno;
-        cout << "Enter Student Name: ";
-        gets(name);
+        cout << "Enter Student First Name: ";
+        cin>>name;
         cout << "Enter Age: ";
         cin >> age;
         cout << "Enter Physics Marks Out Of 100: ";
@@ -101,7 +102,6 @@ void read()
         s1.display();
     }
     a.close();
-    return;
 }
 //****************************************************************************
 void show_tab()
@@ -111,8 +111,8 @@ void show_tab()
     ifstream a;
     a.open("student1.dat", ios::binary);
     cout << "\n\t\t\tSTUDENTS RECORD CARD\n\n";
-    cout << "===========================================================================" << endl;
-    cout << "RollNo.\t"
+    cout << "====================================================================================" << endl;
+    cout << "RollNo.\t\t"
          << "Name\t"
          << "Age\t"
          << "P\t"
@@ -121,14 +121,13 @@ void show_tab()
          << "CS\t"
          << "E\t"
          << "Percentage" << endl;
-    cout << "===========================================================================" << endl;
+    cout << "====================================================================================" << endl;
     while (a.read((char *)&s1, sizeof(s1)))
     {
         s1.process();
         s1.showtab();
     }
     a.close();
-    return;
 }
 //***************************************************************************
 void read1()
@@ -151,7 +150,6 @@ void read1()
         }
     }
     a.close();
-    return;
 }
 //***************************************************************************
 // SYNTAX FOR MODIFYING A FILE IN FILE HANDLING
@@ -304,46 +302,13 @@ void edit_menu()
         break;
     }
 }
-//**************************************************************************
-/*int main()
-{
- int ch;
- do
- {
- system("cls");
- cout<<"\n\t\t\t\tOPTIONS\n";
- cout<<"\t\t\t\t*******\n\n";
- cout<<"\t\t\t1."<<'\t'<<"Enter Student Record"<<endl;
- cout<<"\t\t\t2."<<'\t'<<"Show All Student Records"<<endl;
- cout<<"\t\t\t3."<<'\t'<<"Show Student Record Card"<<endl;
- cout<<"\t\t\t4."<<'\t'<<"Show Specific Student's Record"<<endl;
- cout<<"\t\t\t5."<<'\t'<<"Modify Record"<<endl;
- cout<<"\t\t\t6."<<'\t'<<"Delete Record"<<endl;
- cout<<"\t\t\t7."<<'\t'<<"Exit"<<endl<<endl<<endl;
- cout<<"\t\t\tEnter Your Choice: ";
- cin>>ch;
- switch(ch)
- {
-  case 1:  write();    break;
-  case 2:  read();     break;
-  case 3:  show_tab(); break;
-  case 4:  read1();    break;
-  case 5:  modify();   break;
-  case 6:  delete_();  break;
-  case 7:              break;
-  default: cout<<endl<<"Wrong Choice Entered......"<<endl<<"Please Try Again"; break;
- }
- }
- while(ch!=7);
- return 0;
-}*/
-//***************************************************************************
+
 int main()
 {
+	system("cls");
     int ch;
     do
     {
-        system("cls");
         cout << "\n\t\t\t\tOPTIONS\n";
         cout << "\t\t\t\t*******\n\n";
         cout << "\t\t\t1." << '\t' << "Entry / Edit Menu" << endl;
